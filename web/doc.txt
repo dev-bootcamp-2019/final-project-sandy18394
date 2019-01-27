@@ -1,0 +1,34 @@
+# UI Component --- Angular Material
+# Frontend MVC ---- Angular 1.5.*
+# Backend   ------- Nodejs
+# Backend server & routing ------ Express
+# Authentication and Rest API --- Nodejs
+# Rest APIs --- Nodejs
+# Database --- MySQl
+# Project Management Client --- BitBucket
+# Deployment on --- Heroku
+# Graph and Visualization --- D3.js
+# Machine Learning and Analytics at Backend --- Python
+# Testing Framework --- Karma/Mocha/Jasmine
+# Project Automation Tasks --- Grunt
+# Css compiler if used in future --- Sass
+# IDE or Editor ------ preferrable ( Sublime/ Visual Code ) also can be Atom/ WebStorm
+
+## Things I can work on now
+# UI Component from Mockups
+# Frontend
+## Frontend will be part of Angular Material Learning as it can not be learn at once
+# Backend server routing and other Database tasks
+# Project Management
+# Deployment at Basic level
+# Graph and Visualization
+# Basic Machine Learning like Classifications, Prediction tasks
+
+## Things to learn
+# Complex UI components routing and nesting of views in Angularjs
+# Deployment at Enterprise level
+# Rest APIs and Authentication
+# Testing Framework
+
+## Things I need 
+# Full fledged Designed Mockups 

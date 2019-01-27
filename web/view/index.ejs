@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dumed">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <style rel="stylesheet" href="css/dice.css"></style>
+    <title>Roll2Win</title>
+    <style>
+        .info-table{
+            width:95%;
+            margin: 10px 0px 10px 20px;
+        }
+        .info-table .info-head-container .info-head{
+            padding: 15px 10px;
+            font-size: 0.8em;
+            font-weight: 400;
+            background: #efefef;
+            width: 20%;
+            border: 1px solid #bbb;
+            text-align: center;
+        }
+        .info-table .info-body-container .info-body{
+            width: 20%;
+            padding: 12px 10px;
+            font-weight: 100;
+            font-size: 2em;
+            background: #fff;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        
+        /*
+ * Dice.css v1.0
+ * Code - MIT License - https://github.com/diafygi/dice-css
+ * Images - Public Domain - https://openclipart.org/detail/105931/sixsided-dice-faces-lio-01
+ */
+ .dice{display:inline-block;min-height:1em;padding-left:1em;background-size:1em;background-repeat:no-repeat;font-size:6em;margin: 55px;
+    margin-left: 0;}
+ .dice-1{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cg transform='translate(113.25%2C-494.1)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-406.5%2C374.7)'%3E%3Crect x='588' y='240.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(337.5%2C87.5)' cx='325' cy='227.4' r='12.5' style='fill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+ .dice-2{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(109.9%2C-505.1)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-415.6%2C485.6)'%3E%3Crect x='613' y='40.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(326.5%2C-148.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(398.5%2C-76.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+ .dice-3{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(84.9%2C-515.5)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-290.6%2C514.9)'%3E%3Crect x='413' y='2.9' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(126.5%2C-186)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(198.5%2C-114)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(162.5%2C-150)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+ .dice-4{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(90.7%2C-499.7)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-302.7%2C367.8)'%3E%3Crect x='425.5' y='265.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(139%2C76.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(139%2C148.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(211%2C76.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(211%2C148.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+ .dice-5{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(89.2%2C-510.5)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-194.9%2C372.3)'%3E%3Crect x='213' y='277.9' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(-73.5%2C89)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-73.5%2C161)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-1.5%2C89)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-1.5%2C161)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-37.5%2C125)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+ .dice-6{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(86.2%2C-500.6)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-98.2%2C356.2)'%3E%3Crect x='25.5' y='290.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(-261%2C101.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-261%2C173.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-261%2C137.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C101.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C173.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C137.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");}
+
+ .select-network-container input{
+    width: 82%;
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+    
+md-card-title{
+    padding-top: 0 !important;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+md-card-title-text{
+    text-align: center;
+}
+
+md-sidenav{
+    width: 350px !important;
+    height: 100%;
+}
+.players-card {
+    padding: 10px;
+    padding-top: 0;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+}
+.players-card p{
+    font-size: 2em;
+    margin: 0;
+}
+.joinedPlayers{
+    background: #ff6b14f5;
+    box-shadow: 4px 7px 7px 0px #ff6b1473;
+}
+.allowedPlayers{
+    background: #1ba30bf5;
+    margin-right: 10px;
+    box-shadow: 4px 7px 7px 0px #19910473;
+}
+.rollDiceButton{
+    padding-left: 125px;
+}
+.rollDiceButton .md-button{
+    padding: 10px;
+    min-width: 120px;
+}
+.board-container{
+    text-align: center;
+}
+.board-container .board-table tr td{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border:1px solid #aaa;
+}
+.isPainted1{
+    background: #5f85ff;
+    color: #fff;
+    
+}
+.isPainted1:hover{
+    background: black;
+}
+.isPainted2{
+    background:#ffa500;
+}
+   </style>
+</head>
+
+<body>
+    <div ng-controller="mainController" ng-cloak>
+        <!-- Navigation -->
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <h2 flex md-truncate>Roll2Win</h2>
+            </div>
+        </md-toolbar>
+
+        <section layout="row" flex>
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+                <md-toolbar class="md-theme-indigo">
+                    <h1 class="md-toolbar-tools">Player Info</h1>
+                </md-toolbar>
+                <md-content layout-padding>
+                    <div class="image-container">
+
+                    </div>
+                    <div class="info-container">
+                        <div layout="row" layout-align="space-between center" flex="100">
+                            <div>
+                                <div layout="row" flex="100">
+                                    <div class="image-container">
+                                        default dp
+                                    </div>
+                                    <br>
+                                    <div class="image-chooser">
+                                        browse
+                                    </div>
+                                </div>
+                                <div layout="row" flex="100">
+                                    <div flex="100" class="account-hash">
+                                        <label for="">Select Account</label>
+                                        <md-select ng-model="account" placeholder="Select Account" required name="account"
+                                            ng-change="changeLocalAccount(account)">
+                                            <md-option ng-repeat="account in accounts" ng-value="account">
+                                                {{account}}
+                                            </md-option>
+                                        </md-select>
+                                    </div>
+                                </div>
+                                <div layout="row" layout-align="space-between center">
+                                    <div flex="50" class="account-text">
+                                        <label for="">Account Balance</label><br>
+                                        <span class="account-balance"></span> {{balanceInEther}}
+                                    </div>
+                                    <div flex="50" class="account-text">
+                                        <label for="">Bet Amount</label><br>
+                                        <input placeholder="0" ng-model="betAmount" ng-value="betAmount" style="width:50px"></input>
+                                    </div>
+                                </div>
+                                <div layout="row" layout-align="center center">
+                                    <md-button class="md-raised md-primary" ng-click="addMe()">Add Me</md-button>
+                                </div>
+                            </div>
+                        </div>
+                        <div layout="row" layout-align="center center" >
+                            <md-button class="md-raised md-danger" ng-click="resetStateBoard()">Reset Board</md-button>
+                        </div>
+                    </div>
+                </md-content>
+            </md-sidenav>
+            <md-content flex layout-padding>
+                <div class="select-network-container" layout="row" layout-align="center center" ng-show="!isConnected">
+                    <div layout="row" layout-align="center center" flex="30">
+                        <md-card flex="100">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-subhead">Choose your network</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <div layout="row" layout-align="end center">
+                                <div flex="50">
+
+                                </div>
+                                <div flex="50" layout-align="center" class="network-input">
+                                    <input placeholder="http://localhost:8545" ng-model="networkAddress" ng-value="networkAddress"></input>
+                                </div>
+                            </div>
+                            <md-card-actions layout="row" layout-align="space-around center">
+                                <md-button class="md-primary" ng-click="selectNetwork('rinkbey')">Rinkbey Network</md-button>
+                                or
+                                <md-button class="md-raised" ng-click="selectNetwork('localhost')">Localhost Network</md-button>
+                            </md-card-actions>
+                            <br>
+                        </md-card>
+                    </div>
+                </div>
+
+                <div class="right-content" style="padding-left:25%" ng-show="isConnected">
+                    <div layout="row" layout-align="start start" flex="100">
+                        <div flex="20" class="players-card joinedPlayers">
+                            <h4>Number of Players</h4>
+                            <p>{{totalJoined}}</p>
+                        </div>
+                        <div flex="20" class="players-card allowedPlayers">
+                            <h4>Allowed Players</h4>
+                            <p>{{totalAllowed}}</p>
+                        </div>
+                        <div flex="60" layout="row" layout-align="center start">
+                            <div flex="100">
+                                <div class="info-table" flex="100">
+                                    <div class="info-head-container" layout="row" flex="100" layout-align="space-around center">
+                                        <div class="info-head">Board Position</div>
+                                        <div class="info-head">Betting Amount</div>
+                                        <div class="info-head">Position</div>
+                                        <div class="info-head">Dice Rolled</div>
+                                        <div class="info-head">Status</div>
+                                    </div>
+                                    <div class="info-body-container" layout="row" layout-align="space-around center"
+                                        flex="100">
+                                        <div class="info-body">{{inBoardOrder}}</div>
+                                        <div class="info-body">{{betAmount}}</div>
+                                        <div class="info-body">{{currentPosition}}</div>
+                                        <div class="info-body">{{count}}</div>
+                                        <div class="info-body">{{status}}</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div layout="row" layout-align="space-between center" flex="100">
+                        <div flex="30">
+                            <div ng-show="diceRolling">
+                                <img src="/img/rollingDice.gif" alt="" style="width:250px">
+                            </div>
+                            <div class="dice-number" layout="column" layout-align="center center" flex="100" ng-show="!diceRolling">
+                                <span class="dice dice-1" title="Dice 1" ng-show="diceNumber == 1"></span>
+                                <span class="dice dice-2" title="Dice 2" ng-show="diceNumber == 2"></span>
+                                <span class="dice dice-3" title="Dice 3" ng-show="diceNumber == 3"></span>
+                                <span class="dice dice-4" title="Dice 4" ng-show="diceNumber == 4"></span>
+                                <span class="dice dice-5" title="Dice 5" ng-show="diceNumber == 5"></span>
+                                <span class="dice dice-6" title="Dice 6" ng-show="diceNumber == 6"></span>
+                                <div ng-show="diceNumber == 0">
+                                    Better luck next time! <strong>{{ diceNumber }}</strong>
+                                </div>
+                            </div>
+                            <div flex="30" layout="row" layout-align="center center" class="rollDiceButton">
+                                <md-button class="md-raised md-primary" ng-disabled="isRolling" ng-click="rollDice()">Roll
+                                    Dice</md-button>
+                            </div>
+                        </div>
+                        <div flex="70" layout="row" layout-align="center center">
+                            <div class="board-container">
+                                <table class="board-table">
+                                    <tr ng-repeat="number in boardNumebrs | orderBy:'$index':true ">
+                                        <td></td>
+                                        <td ng-class="{player1:1, isPainted1: !(boardNumebrs.length - player1DiceNumber > $index)}">{{number}}</td>
+                                        <td ng-class="{player2:1, isPainted2: !(boardNumebrs.length - player2DiceNumber > $index)}">{{number}}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                            <td></td>
+                                            <td ng-class="player1"> P1 </td>
+                                            <td ng-class="player2"> P2 </td>
+                                            <td></td>
+                                    </tr>
+                                </table>
+                                <div>
+                                        <h3>Board Status</h3>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </md-content>
+        </section>
+
+    </div>
+    <% include scripts %>
+</body>
+
+</html>
